@@ -1,0 +1,11 @@
+[Unit]
+Description=ansible vault enc/dec in browser
+
+[Service]
+ExecStart=/usr/bin/twistd \
+    --python=/opt/ansible-vault-online/ansible-vault-online.py -n
+PIDFile=/opt/ansible-vault-online/twistd.pid
+WorkingDirectory=/opt/ansible-vault-online/
+
+[Install]
+WantedBy=multi-user.target
