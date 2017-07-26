@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="vaultapp">
+<head>
+  <title>ansible-vault edit</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+  <script type="text/javascript" src="vault.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+<body ng-controller="mainCtrl">
+  <style>
+  	.container {
+  		width: 80%;
+  		margin-top: 1em;
+  	}
+  </style>
+  <div class="container" role=main ng-view="">
+    <div class="row">
+    </div>
+    <div class="row">
+      <form>
+        <div class="form-group">
+          <input type="password" id="pwd" class="form-control" placeholder="Password" ng-model="password">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="source" placeholder="text or encrypted data" ng-model="source"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" ng-click="crypt()">Submit</button>
+          <!--button class="btn btn-default" ng-click="copy()">Copy</button -->
+        </div>
+        <div class="form-group">
+          <textarea readonly class="form-control" rows="5" id="result" ng-model="result"></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
