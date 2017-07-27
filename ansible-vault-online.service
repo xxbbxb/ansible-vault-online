@@ -2,8 +2,9 @@
 Description=ansible vault enc/dec in browser
 
 [Service]
+Environment=PYTHONPATH=/opt/ansible-vault-online
 ExecStart=/usr/bin/twistd \
-    --python=/opt/ansible-vault-online/ansible-vault-online.py -n
+    --python=/opt/ansible-vault-online/ansible-vault-online.py -n --rundir=/opt/ansible-vault-online/
 PIDFile=/opt/ansible-vault-online/twistd.pid
 WorkingDirectory=/opt/ansible-vault-online/
 
