@@ -6,8 +6,8 @@ angular.module('vaultapp').controller('mainCtrl', function ($scope, $http, $wind
     var config = { headers : { 'Content-Type': 'application/json;charset=utf-8;' } };
     $http.post('crypt', data, config)
       .then(function(resp) {
-        $scope.result = $scope.source;
         $scope.source = resp.data.value;
+        $scope.result = "";
         $window.document.getElementById('source').focus();
       }, function(resp) {
         $scope.result = resp.data.value;
